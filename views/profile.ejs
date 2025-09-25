@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - AlphaMart</title>
+    <!-- Font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-red: #D8251E;
+            --color-blue: #0053A0;
+            --color-yellow: #FDCB00;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f8f9fa;
+            --border-color: #ddd;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card h1,
+        .profile-card h2 {
+            color: var(--color-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .profile-info p {
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-blue);
+            box-shadow: 0 0 0 3px rgba(0, 83, 160, 0.2);
+        }
+
+        .btn {
+            width: auto;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--color-blue);
+            color: var(--text-light);
+        }
+
+        .btn:hover {
+            background-color: #00417e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('./partials/navbar.ejs') %>
+
+        <main class="container">
+            <div class="profile-card">
+                <h1>Profil Saya</h1>
+
+                <div class="profile-info">
+                    <p><strong>Email:</strong>
+                        <%= user.email %>
+                    </p>
+                    <p><strong>Role:</strong>
+                        <%= user.role %>
+                    </p>
+                </div>
+
+                <h2>Edit Informasi Profil</h2>
+
+                <form action="/profile/edit" method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Nama Lengkap</label>
+                        <input type="text" id="fullName" name="fullName"
+                            value="<%= user.Profile ? user.Profile.fullName : '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat</label>
+                        <textarea id="address" name="address"><%= user.Profile ? user.Profile.address : '' %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Nomor Telepon</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber"
+                            value="<%= user.Profile ? user.Profile.phoneNumber : '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePicture">URL Foto Profil</label>
+                        <input type="url" id="profilePicture" name="profilePicture"
+                            value="<%= user.Profile ? user.Profile.profilePicture : '' %>">
+                    </div>
+                    <button type="submit" class="btn">Simpan Perubahan</button>
+                </form>
+            </div>
+        </main>
+
+</body>
+
+</html>

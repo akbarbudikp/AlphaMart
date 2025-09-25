@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMart Navbar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 
+          COLOR PALETTE DARI LOGO INDOMARET
+          Merah: #D8251E
+          Biru: #0053A0
+          Kuning: #FDCB00
+        */
+
+        :root {
+            --color-red: #D8251E;
+            --color-blue: #0053A0;
+            --color-yellow: #FDCB00;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #fff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar-container {
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            background-color: var(--color-blue);
+            color: var(--text-light);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-top-left a {
+            margin-right: 20px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .header-top-left a:hover {
+            opacity: 1;
+        }
+
+        .header-top-right .contact-button {
+            border: 1px solid var(--text-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-top-right .contact-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-main {
+            background-color: var(--bg-light);
+            border-bottom: 4px solid var(--color-yellow);
+        }
+
+        .navbar-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .logo .alpha {
+            color: var(--color-red);
+        }
+
+        .logo .mart {
+            color: var(--color-blue);
+        }
+
+        .nav-links ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active a {
+            color: var(--color-red);
+        }
+
+        .nav-search .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            stroke: var(--text-dark);
+            transition: stroke 0.3s ease;
+        }
+
+        .nav-search .search-icon:hover {
+            stroke: var(--color-red);
+        }
+
+        .header-top-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            padding: 6px 15px;
+            border: 1px solid white;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-button.primary {
+            background-color: #D8251E;
+            border-color: #D8251E;
+        }
+
+        .nav-button.primary:hover {
+            background-color: #b01e18;
+        }
+
+        .navbar-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar-container">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-left">
+                    <a href="#">Mitra Business</a>
+                    <a href="#">Digital Business</a>
+                </div>
+                <div class="header-top-right">
+                    <% if (userId) { %>
+                        <a href="/cart" class="nav-button">Keranjang</a>
+                        <a href="/logout" class="nav-button primary">Logout</a>
+                        <a href="/profile">
+                            <img src="<%= profilePictureUrl %>" alt="Foto Profil" class="navbar-avatar">
+                        </a>
+                        <% } else { %>
+                            <a href="/login" class="nav-button">Login</a>
+                            <a href="/register" class="nav-button primary">Register</a>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="#"><span class="alpha">Alpha</span><span class="mart">Mart</span></a>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li class="active"><a href="/">Beranda</a></li>
+                        <li><a href="/products">Produk</a></li>
+                        <li><a href="#">Kategori</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="nav-search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    </svg>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+</body>
+
+</html>

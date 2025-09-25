@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - AlphaMart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 
+          COLOR PALETTE DARI LOGO INDOMARET
+          Merah: #D8251E
+          Biru: #0053A0
+          Kuning: #FDCB00
+        */
+
+        :root {
+            --color-red: #D8251E;
+            --color-blue: #0053A0;
+            --color-yellow: #FDCB00;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f8f9fa;
+            --border-color: #ddd;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 40px 20px;
+        }
+
+        .form-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .form-card h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--color-blue);
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-card label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-card input,
+        .form-card select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-card input:focus,
+        .form-card select:focus {
+            outline: none;
+            border-color: var(--color-blue);
+            box-shadow: 0 0 0 3px rgba(0, 83, 160, 0.2);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--color-red);
+            color: var(--text-light);
+        }
+
+        .btn:hover {
+            background-color: #b01e18;
+            transform: translateY(-2px);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .login-link a {
+            color: var(--color-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('./partials/navbar.ejs') %>
+
+        <% if (error && error.length> 0) { %>
+            <div
+                style="width: 100%; max-width: 450px; margin: 0 auto 20px auto; padding: 15px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px;">
+                <%= error[0] %>
+            </div>
+            <% } %>
+
+                <div class="form-container">
+                    <div class="form-card">
+                        <h2>Login</h2>
+
+                        <form action="/login" method="POST">
+                            <div class="form-group">
+                                <label for="email">Alamat Email</label>
+                                <input type="email" id="email" name="email" placeholder="Masukkan email anda.."
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password"
+                                    placeholder="Masukkan password anda.." required>
+                            </div>
+
+                            <button type="submit" class="btn">Login</button>
+                        </form>
+
+                        <p class="login-link">
+                            Belum punya akun? <a href="/register">Daftar di sini</a>
+                        </p>
+                    </div>
+                </div>
+
+</body>
+
+</html>

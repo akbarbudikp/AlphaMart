@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di AlphaMart</title>
+    <!-- Font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 
+          COLOR PALETTE DARI LOGO INDOMARET
+          Merah: #D8251E
+          Biru: #0053A0
+          Kuning: #FDCB00
+        */
+
+        :root {
+            --color-red: #D8251E;
+            --color-blue: #0053A0;
+            --color-yellow: #FDCB00;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background-color: var(--color-blue);
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--color-red);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: #b01e18;
+            transform: translateY(-2px);
+        }
+
+        .features {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--color-blue);
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .feature-item {
+            flex-basis: 30%;
+        }
+
+        .feature-item .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            stroke: var(--color-red);
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .promo {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .promo h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--color-blue);
+        }
+
+        .promo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-card .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-red);
+            margin-bottom: 20px;
+        }
+
+        .btn-secondary {
+            background-color: var(--color-blue);
+            color: var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: #00417e;
+        }
+
+        .footer {
+            background-color: var(--color-blue);
+            color: var(--text-light);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include("./partials/navbar") %>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Selamat Datang di AlphaMart</h1>
+                    <p>Solusi belanja hemat dan lengkap untuk kebutuhan harian Anda.</p>
+                    <a href="/products" class="btn btn-primary">Belanja Sekarang</a>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container">
+                    <h2>Kenapa Belanja di AlphaMart?</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l1.823-6.841M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <h3>Produk Lengkap</h3>
+                            <p>Temukan ribuan produk kebutuhan sehari-hari, dari makanan hingga perlengkapan rumah
+                                tangga.</p>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+                            </svg>
+                            <h3>Promo Setiap Hari</h3>
+                            <p>Nikmati diskon dan penawaran spesial setiap hari untuk produk-produk favorit Anda.</p>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 013.375-3.375h9.75a3.375 3.375 0 013.375 3.375v1.875" />
+                            </svg>
+                            <h3>Pengiriman Cepat</h3>
+                            <p>Pesanan Anda akan kami antar dengan cepat dan aman langsung ke depan pintu rumah Anda.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo">
+                <div class="container">
+                    <h2>Promo Spesial Minggu Ini</h2>
+                    <div class="promo-grid">
+                        <div class="product-card">
+                            <img src="https://drivethru.klikindomaret.com/twb5/wp-content/uploads/sites/31/2021/07/tropical-minyak-grg-botol-2lt.png"
+                                alt="Produk 1">
+                            <h3>Minyak Goreng 2L</h3>
+                            <p class="price">Rp 35.000</p>
+                            <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://www.rinso.com/images/h0nadbhvm6m4/5Kxf41PDRmwY1shdngn99e/b7e6d213048b7ec6940b445691cac402/TGlxdWlkX3Jvc2VfZnJlc2gucG5n/1080w-1080h/rinso-molto-deterjen-cair-rose-fresh-packshot.avif"
+                                alt="Produk 2">
+                            <h3>Deterjen Cair 800ml</h3>
+                            <p class="price">Rp 18.500</p>
+                            <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/8f083bf2247f4df798f73fc4b375c659~tplv-aphluv4xwc-resize-webp:800:800.webp?dr=15584&t=555f072d&ps=933b5bde&shp=6ce186a1&shcp=607f11de&idc=my&from=1826719393"
+                                alt="Produk 3">
+                            <h3>Biskuit Kaleng</h3>
+                            <p class="price">Rp 49.900</p>
+                            <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 AlphaMart.</p>
+            </div>
+        </footer>
+
+</body>
+
+</html>

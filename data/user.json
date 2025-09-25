@@ -1,0 +1,41 @@
+[{
+  "email": "ystowte0@google.fr",
+  "password": "$2a$04$OV3A7iKY5ROVsIhwbuONoOJFDUxrzccHUzZzqrpO06Qp0szEoTL46",
+  "role": "Customer"
+}, {
+  "email": "bofinan1@yolasite.com",
+  "password": "$2a$04$vTrANxpvELdc.0Q4hCBWfe7UOTrm17VWssvOnpmiJvbYYd.AYHIN6",
+  "role": "Customer"
+}, {
+  "email": "pkordt2@prlog.org",
+  "password": "$2a$04$yRo4/5fzxzDVkfebW0MaD.qmI7gbIVG8S3IcEenxT9nNgmQEHhvMu",
+  "role": "Admin"
+}, {
+  "email": "blivock3@jimdo.com",
+  "password": "$2a$04$xv8QxQZM5PYIicWcJqd9fu8vHN9mCxlJLgTkE6tR/rGe3llo19BOK",
+  "role": "Admin"
+}, {
+  "email": "rfurman4@amazon.com",
+  "password": "$2a$04$r.NL8ISuZJDLsY1XmfHQ6ewme6GulMjB2Srw6xHAUR4oDjZ.99ANW",
+  "role": "Customer"
+}, {
+  "email": "zbanck5@jugem.jp",
+  "password": "$2a$04$ldMfNPsRs/TBA2q1c74HZOMDt6Q.gtPWndFVPAbi2wFlkwbiHfrIC",
+  "role": "Customer"
+}, {
+  "email": "cbalentyne6@cpanel.net",
+  "password": "$2a$04$pAgi5kFl/1Z3q8hijhimr.kNF5Xw0gJfDqA3B/I9HmpxqhJnC.Vui",
+  "role": "Customer"
+}, {
+  "email": "skerton7@homestead.com",
+  "password": "$2a$04$w5J/S59Piso3t5nxCg5GtOMcWT8ZXiwRR1vItYf8WJNbpYChzO.fO",
+  "role": "Customer"
+}, {
+  "email": "aluca8@auda.org.au",
+  "password": "$2a$04$SVl11K55/5ulzzIhM4sGZuSS4Zdk7vHJjoTbjAla/AToAmOyLXkXO",
+  "role": "Customer"
+}, {
+  "email": "tspeenden9@yellowpages.com",
+  "password": "$2a$04$Kxv1XuoXt/6qaAHis4kjBeSDk8KET8nWJYz0w0KslsZC2QFQ60Xzu",
+  "role": "Customer"
+}]
